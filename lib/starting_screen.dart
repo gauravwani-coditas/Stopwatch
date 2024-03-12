@@ -145,7 +145,7 @@ class _StartingState extends State<StartingScreen> {
           ),
 
          
-
+          //comment to progress bar
           Center(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
