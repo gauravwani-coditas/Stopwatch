@@ -97,7 +97,8 @@ class _StartingState extends State<StartingScreen> {
       // digitalMinutes = minutes < 10 ? "0$minutes" : "$minutes";
       // digitalHours = hours < 10 ? "0$hours" : "$hours";
       lapsVisibility = true;
-      laps.add("Lap ${laps.length} :  $digitalHours : $digitalMinutes :  $digitalSeconds");
+      laps.add(
+          "Lap ${laps.length + 1} :  $digitalHours : $digitalMinutes :  $digitalSeconds");
     });
   }
 
@@ -138,23 +139,22 @@ class _StartingState extends State<StartingScreen> {
               alignment: Alignment.center,
               children: [
                 Container(
-                  margin:const EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
                   alignment: Alignment.center,
                   height: 300,
                   width: 300,
-                  decoration:  BoxDecoration(
+                  decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: const Color.fromARGB(255, 156, 184, 249),
-                    border : Border.all(
-                      color:const Color.fromARGB(255, 99, 141, 238),
-                      width: 15
-                    ),
+                    border: Border.all(
+                        color: const Color.fromARGB(255, 99, 141, 238),
+                        width: 15),
                   ),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        "$digitalHours :  $digitalMinutes :  $digitalSeconds",
+                        "$digitalHours : $digitalMinutes : $digitalSeconds",
                         style: const TextStyle(
                             fontSize: 40, color: Color.fromARGB(132, 0, 0, 0)),
                       ),
@@ -171,6 +171,7 @@ class _StartingState extends State<StartingScreen> {
                         Color.fromARGB(255, 0, 16, 53),
                       ),
                       strokeWidth: 15,
+                      strokeCap: StrokeCap.round,
                     ),
                   ),
                 ),
