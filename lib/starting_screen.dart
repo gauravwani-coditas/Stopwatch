@@ -1,6 +1,8 @@
 import "dart:async";
 
 import "package:flutter/material.dart";
+import "package:flutter/rendering.dart";
+import "package:flutter/widgets.dart";
 
 class StartingScreen extends StatefulWidget {
   const StartingScreen({super.key});
@@ -95,7 +97,7 @@ class _StartingState extends State<StartingScreen> {
       // digitalMinutes = minutes < 10 ? "0$minutes" : "$minutes";
       // digitalHours = hours < 10 ? "0$hours" : "$hours";
       lapsVisibility = true;
-      laps.add("$digitalHours $digitalMinutes $digitalSeconds");
+      laps.add("Lap ${laps.length} :  $digitalHours : $digitalMinutes :  $digitalSeconds");
     });
   }
 
@@ -136,13 +138,17 @@ class _StartingState extends State<StartingScreen> {
               alignment: Alignment.center,
               children: [
                 Container(
-                  margin: const EdgeInsets.all(20),
+                  margin:const EdgeInsets.all(20),
                   alignment: Alignment.center,
                   height: 300,
                   width: 300,
-                  decoration: const BoxDecoration(
+                  decoration:  BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color.fromARGB(255, 156, 184, 249),
+                    color: const Color.fromARGB(255, 156, 184, 249),
+                    border : Border.all(
+                      color:const Color.fromARGB(255, 99, 141, 238),
+                      width: 15
+                    ),
                   ),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -157,14 +163,14 @@ class _StartingState extends State<StartingScreen> {
                 ),
                 Center(
                   child: SizedBox(
-                    height: 300,
-                    width: 300,
+                    height: 290,
+                    width: 290,
                     child: CircularProgressIndicator(
                       value: seconds / 60,
                       valueColor: const AlwaysStoppedAnimation<Color>(
                         Color.fromARGB(255, 0, 16, 53),
                       ),
-                      strokeWidth: 20,
+                      strokeWidth: 15,
                     ),
                   ),
                 ),
