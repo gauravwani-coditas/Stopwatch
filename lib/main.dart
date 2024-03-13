@@ -6,12 +6,8 @@ void main() {
   runApp(const Stopwatch());
 }
 
-
-
 class Stopwatch extends StatelessWidget {
   const Stopwatch({super.key});
-
-
 
   @override
   Widget build(BuildContext context) {
